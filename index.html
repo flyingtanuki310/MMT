@@ -149,7 +149,6 @@
     <!-- HERO SECTION (PRÉ-LANCEMENT) -->
     <section class="relative h-screen flex items-center justify-center hero-bg text-white pt-20">
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 fade-in-section">
-            <!-- Modification ici : mt-28 sur mobile, mt-12 sur desktop -->
             <div class="mb-8 mt-28 md:mt-12 flex justify-center">
                 <img src="logo.png" alt="Logo MMT" class="w-28 h-28 object-contain drop-shadow-2xl animate-bounce"
                     style="animation-duration: 3s;">
@@ -402,16 +401,21 @@
                 Inscrivez-vous à la liste d'alerte pour recevoir le lien en avant-première.
             </p>
 
-            <form name="newsletter" method="POST" data-netlify="true"
-                class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input type="hidden" name="form-name" value="newsletter">
-                <input type="email" name="email" placeholder="Votre email" required
-                    class="flex-1 px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-mmt-green transition-colors">
-                <button type="submit"
-                    class="px-8 py-4 bg-mmt-green hover:bg-green-600 text-white font-bold rounded-full transition-colors whitespace-nowrap">
-                    Rejoindre la liste
-                </button>
+            <!-- FORMULAIRE GOOGLE SHEETS -->
+            <form id="newsletter-form" class="max-w-md mx-auto relative">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" name="email" placeholder="Votre email" required
+                        class="flex-1 px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-mmt-green transition-colors">
+
+                    <button type="submit" id="submit-btn"
+                        class="px-8 py-4 bg-mmt-green hover:bg-green-600 text-white font-bold rounded-full transition-colors whitespace-nowrap">
+                        Rejoindre la liste
+                    </button>
+                </div>
+                <!-- Message de succès/erreur -->
+                <div id="form-status" class="hidden mt-4 text-sm font-medium"></div>
             </form>
+
             <p class="text-xs text-slate-500 mt-4"><i class="fas fa-lock mr-1"></i> Zéro spam. Vos données restent
                 souveraines.</p>
         </div>
@@ -663,8 +667,8 @@
                             Adresse : Mougins, France.</p>
 
                         <p><strong>Hébergement :</strong><br>
-                            Ce site est hébergé par Netlify, Inc.<br>
-                            2325 3rd Street, Suite 296, San Francisco, California 94107, USA.</p>
+                            Ce site est hébergé par Vercel Inc.<br>
+                            340 S Lemon Ave #4133, Walnut, CA 91789, USA.</p>
 
                         <p><strong>Propriété intellectuelle :</strong><br>
                             L'ensemble des contenus (textes, images, logo) est la propriété exclusive de Romain Avon.
@@ -806,6 +810,55 @@
                 });
             }
         });
+
+        // GESTION GOOGLE SHEETS
+        const form = document.getElementById('newsletter-form');
+        const status = document.getElementById('form-status');
+        const submitBtn = document.getElementById('submit-btn');
+
+        if (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Mettre le bouton en chargement
+                const originalBtnText = submitBtn.innerText;
+                submitBtn.innerText = "Envoi...";
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
+                // Récupération des données
+                const formData = new FormData(form);
+                // URL de votre script Google Apps Script (À REMPLACER)
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbyq6IYQ2DJCYO5cozOhgVsxrXxd9M311SxskqsL-XFMgUVVNGWyi__FonkiusrcYA5j/exec';
+
+                if (scriptURL.includes('VOTRE_URL')) {
+                    alert("Attention : Vous devez remplacer 'VOTRE_URL_GOOGLE_SCRIPT_ICI' dans le code par l'URL de votre déploiement Google Apps Script.");
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    return;
+                }
+
+                fetch(scriptURL, { method: 'POST', body: formData })
+                    .then(response => {
+                        status.innerHTML = '<i class="fas fa-check-circle text-mmt-green"></i> Bienvenue dans le club ! Vous serez alerté.';
+                        status.classList.remove('hidden', 'text-red-500');
+                        status.classList.add('text-mmt-green');
+                        form.reset();
+                    })
+                    .catch(error => {
+                        console.error('Error!', error.message);
+                        status.innerHTML = "Oups! Il y a eu un problème de connexion.";
+                        status.classList.remove('hidden', 'text-mmt-green');
+                        status.classList.add('text-red-500');
+                    })
+                    .finally(() => {
+                        submitBtn.innerText = originalBtnText;
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    });
+            });
+        }
     </script>
 </body>
 
