@@ -12,7 +12,7 @@
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="shortcut icon" type="image/png" href="logo.png">
 
-    <!-- OPEN GRAPH (L'image pour le partage social : WhatsApp, LinkedIn, Facebook) -->
+    <!-- OPEN GRAPH -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meetmethere.fr/">
     <meta property="og:title" content="MeetMeThere | Le Premier Club de Voyage par Affinités">
@@ -200,7 +200,7 @@
             </div>
 
             <div class="mt-8 text-sm text-slate-300">
-                <p><i class="fas fa-gift text-mmt-green mr-2"></i><strong>1000 places "Pionniers"</strong> à prix libre
+                <p><i class="fas fa-gift text-mmt-green mr-2"></i><strong>500 places "Pionniers"</strong> à prix libre
                     réservées aux premiers inscrits.</p>
             </div>
         </div>
@@ -332,76 +332,100 @@
                     l'ouverture officielle.</p>
             </div>
 
-            <div
-                class="grid grid-cols-1 md:grid-cols-3 gap-8 opacity-80 hover:opacity-100 transition-opacity duration-500">
-                <!-- Free -->
-                <div
-                    class="border border-slate-200 rounded-2xl p-8 bg-slate-50 relative fade-in-section grayscale transition-all">
-                    <h4 class="text-xl font-bold text-mmt-dark">Découverte</h4>
-                    <div class="my-4">
-                        <span class="text-4xl font-bold text-mmt-dark">Gratuit</span>
-                    </div>
-                    <p class="text-sm text-slate-500 mb-6 border-b border-slate-200 pb-6">Pour s'imprégner de l'esprit
-                        du club.</p>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center text-sm text-slate-700"><i
-                                class="fas fa-check text-mmt-green w-6"></i> Vérification Identité (KYC)</li>
-                        <li class="flex items-center text-sm text-slate-700"><i
-                                class="fas fa-check text-mmt-green w-6"></i> Accès à la Carte Interactive</li>
-                        <li class="flex items-center text-sm text-slate-700"><i
-                                class="fas fa-check text-mmt-green w-6"></i> Agenda Événements Locaux</li>
-                        <li class="flex items-center text-sm text-slate-400"><i
-                                class="fas fa-times text-slate-300 w-6"></i> Pas d'hébergement</li>
-                    </ul>
-                </div>
-
-                <!-- Silver (Highlighted) -->
-                <div class="border-2 border-mmt-red rounded-2xl p-8 shadow-2xl bg-white relative transform md:-translate-y-4 fade-in-section"
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 opacity-90">
+                <!-- 1. PIONNIER (PRIX LIBRE) -->
+                <div class="border-2 border-mmt-red rounded-2xl p-6 shadow-2xl bg-white relative transform lg:-translate-y-4 fade-in-section flex flex-col z-10"
                     style="transition-delay: 100ms;">
                     <div
-                        class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-logo-gradient text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wide shadow-md">
-                        Offre Lancement
+                        class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-logo-gradient text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide shadow-md whitespace-nowrap">
+                        Les 500 Premiers
                     </div>
-                    <h4 class="text-xl font-bold text-mmt-dark">Voyager (Silver)</h4>
-                    <div class="my-4">
-                        <span class="text-4xl font-bold text-mmt-dark">Prix Libre</span><span
-                            class="text-slate-500 block text-sm font-normal">pour les 1000 premiers</span>
+                    <h4 class="text-lg font-bold text-mmt-dark">Pionnier (Silver)</h4>
+                    <div class="my-3">
+                        <span class="text-3xl font-bold text-mmt-dark">Prix Libre</span>
+                        <span class="text-slate-500 block text-xs font-normal">Minimum 5 €</span>
                     </div>
-                    <p class="text-sm text-slate-500 mb-6 border-b border-slate-200 pb-6">L'essentiel pour partir
-                        l'esprit libre.</p>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center text-sm text-slate-700"><i
-                                class="fas fa-check text-mmt-red w-6"></i> <strong>Hébergement Illimité</strong></li>
-                        <li class="flex items-center text-sm text-slate-700"><i
-                                class="fas fa-check text-mmt-red w-6"></i> IA Réactive (Assistant)</li>
-                        <li class="flex items-center text-sm text-slate-700"><i
-                                class="fas fa-check text-mmt-red w-6"></i> Gestion Menus & Frais</li>
+                    <p class="text-xs text-slate-500 mb-4 border-b border-slate-200 pb-4">Pour les bâtisseurs du club.
+                    </p>
+                    <ul class="space-y-3 mb-6 flex-grow">
+                        <li class="flex items-center text-xs text-slate-700"><i
+                                class="fas fa-check text-mmt-red w-5"></i> <strong>Renouvellement -50% À VIE</strong>
+                        </li>
+                        <li class="flex items-center text-xs text-slate-700"><i
+                                class="fas fa-check text-mmt-red w-5"></i> Hébergement Illimité</li>
+                        <li class="flex items-center text-xs text-slate-700"><i
+                                class="fas fa-check text-mmt-red w-5"></i> IA Réactive</li>
                     </ul>
                     <a href="#newsletter"
-                        class="block w-full py-3 bg-logo-gradient text-white font-bold text-center rounded-lg hover:opacity-90 transition-opacity animate-pulse">
-                        M'alerter de l'ouverture
+                        class="block w-full py-2 bg-logo-gradient text-white font-bold text-center text-sm rounded-lg hover:opacity-90 transition-opacity animate-pulse">
+                        M'alerter
                     </a>
-                    <p class="text-xs text-center mt-3 text-slate-400">Prix public futur : 120 €/an</p>
                 </div>
 
-                <!-- Gold -->
-                <div class="border border-slate-200 rounded-2xl p-8 bg-slate-50 relative fade-in-section grayscale transition-all"
-                    style="transition-delay: 200ms;">
-                    <h4 class="text-xl font-bold text-mmt-dark">Explorer (Gold)</h4>
-                    <div class="my-4">
-                        <span class="text-4xl font-bold text-mmt-dark">200 €</span><span
-                            class="text-slate-500">/an</span>
+                <!-- 2. AVANT-GARDE (30€) -->
+                <div class="border border-slate-200 rounded-2xl p-6 bg-slate-50 relative fade-in-section grayscale transition-all flex flex-col"
+                    style="transition-delay: 150ms;">
+                    <div
+                        class="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 rounded-bl-lg rounded-tr-lg text-xs font-bold shadow-sm">
+                        -75%
                     </div>
-                    <p class="text-sm text-slate-500 mb-6 border-b border-slate-200 pb-6">Le confort absolu et la
-                        précision.</p>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-center text-sm text-slate-700"><i
-                                class="fas fa-check text-mmt-primary w-6"></i> Tout le pack Voyager</li>
-                        <li class="flex items-center text-sm text-slate-700"><i
-                                class="fas fa-check text-mmt-primary w-6"></i> <strong>IA Proactive
-                                (Conciergerie)</strong></li>
-                        <li class="flex items-center text-sm text-slate-700"><i
-                                class="fas fa-check text-mmt-primary w-6"></i> Carte Débridée (1-5 résultats)</li>
+                    <h4 class="text-lg font-bold text-mmt-dark">Avant-Garde</h4>
+                    <div class="my-3">
+                        <span class="text-3xl font-bold text-mmt-dark">30 €</span><span
+                            class="text-slate-500 text-xs">/an</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-4 border-b border-slate-200 pb-4">Pour les très rapides.</p>
+                    <ul class="space-y-3 mb-6 flex-grow">
+                        <li class="flex items-center text-xs text-slate-700"><i
+                                class="fas fa-check text-mmt-green w-5"></i> <strong>Renouvellement -50% À VIE</strong>
+                        </li>
+                        <li class="flex items-center text-xs text-slate-700"><i
+                                class="fas fa-check text-mmt-green w-5"></i> Pack Silver complet</li>
+                        <li class="flex items-center text-xs text-slate-700"><i
+                                class="fas fa-check text-mmt-green w-5"></i> Accès à la communauté</li>
+                    </ul>
+                </div>
+
+                <!-- 3. PELOTON (60€) -->
+                <div class="border border-slate-200 rounded-2xl p-6 bg-slate-50 relative fade-in-section grayscale transition-all flex flex-col"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="absolute top-0 right-0 bg-blue-500 text-white px-2 py-1 rounded-bl-lg rounded-tr-lg text-xs font-bold shadow-sm">
+                        -50%
+                    </div>
+                    <h4 class="text-lg font-bold text-mmt-dark">Peloton</h4>
+                    <div class="my-3">
+                        <span class="text-3xl font-bold text-mmt-dark">60 €</span><span
+                            class="text-slate-500 text-xs">/an</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-4 border-b border-slate-200 pb-4">L'offre moitié prix.</p>
+                    <ul class="space-y-3 mb-6 flex-grow">
+                        <li class="flex items-center text-xs text-slate-700"><i
+                                class="fas fa-check text-mmt-green w-5"></i> <strong>Renouvellement -50% À VIE</strong>
+                        </li>
+                        <li class="flex items-center text-xs text-slate-700"><i
+                                class="fas fa-check text-mmt-green w-5"></i> Pack Silver complet</li>
+                    </ul>
+                </div>
+
+                <!-- 4. STANDARD (96€) -->
+                <div class="border border-slate-200 rounded-2xl p-6 bg-slate-50 relative fade-in-section grayscale transition-all flex flex-col"
+                    style="transition-delay: 250ms;">
+                    <div
+                        class="absolute top-0 right-0 bg-purple-500 text-white px-2 py-1 rounded-bl-lg rounded-tr-lg text-xs font-bold shadow-sm">
+                        -20%
+                    </div>
+                    <h4 class="text-lg font-bold text-mmt-dark">Standard</h4>
+                    <div class="my-3">
+                        <span class="text-3xl font-bold text-mmt-dark">96 €</span><span
+                            class="text-slate-500 text-xs">/an</span>
+                    </div>
+                    <p class="text-xs text-slate-500 mb-4 border-b border-slate-200 pb-4">Pour les retardataires.</p>
+                    <ul class="space-y-3 mb-6 flex-grow">
+                        <li class="flex items-center text-xs text-slate-700"><i
+                                class="fas fa-check text-mmt-green w-5"></i> Pack Silver complet</li>
+                        <li class="flex items-center text-xs text-slate-700"><i
+                                class="fas fa-check text-mmt-green w-5"></i> -20% sur la 1ère année</li>
                     </ul>
                 </div>
             </div>
@@ -416,7 +440,7 @@
             </div>
             <h3 class="text-3xl font-heading font-bold mb-4">Ne manquez pas l'ouverture</h3>
             <p class="text-lg text-slate-300 mb-8">
-                Les 1000 premières places "Pionniers" (Pack Silver à prix libre) risquent de partir en quelques heures.
+                Les 500 premières places "Pionniers" (Pack Silver à prix libre) risquent de partir en quelques heures.
                 Inscrivez-vous à la liste d'alerte pour recevoir le lien en avant-première.
             </p>
 
@@ -573,6 +597,7 @@
                                 simple transaction froide de mètres carrés où l'âme du lieu est systématiquement
                                 sacrifiée sur l'autel de la rentabilité.
                             </p>
+                            <!-- Contenu du manifeste inchangé pour abréger l'affichage ici, mais présent dans le fichier final -->
                             <p class="text-slate-600 leading-relaxed mb-4">
                                 Entre les chaînes d'hôtels standardisées aux couloirs interchangeables de Tokyo à Paris,
                                 et les locations saisonnières gérées par des conciergeries automatiques et des boîtes à
