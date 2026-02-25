@@ -60,7 +60,7 @@ const Rejoindre = () => {
                                 <p className="mb-2"><strong className="text-mmt-gold">-50% À VIE</strong> sur le renouvellement.</p>
                                 <p>Prix public futur : <span className="line-through decoration-mmt-gold">120€</span></p>
                             </div>
-                            <a href="https://fr.ulule.com/meetmethere" target="_blank" rel="noreferrer" className="w-full py-4 bg-mmt-dark text-mmt-light font-serif text-xl italic hover:bg-[#1c1917] transition-colors shadow-lg flex items-center justify-center gap-2">
+                            <a href="https://fr.ulule.com/meetmethere" className="w-full py-4 bg-mmt-dark text-mmt-light font-serif text-xl italic hover:bg-[#1c1917] transition-colors shadow-lg flex items-center justify-center gap-2">
                                 Bientôt sur Ulule <ArrowRight size={18} />
                             </a>
                             <p className="mt-4 text-[10px] text-stone-400 uppercase tracking-widest">Soyez prêts • Places Limitées</p>
