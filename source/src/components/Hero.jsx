@@ -28,7 +28,7 @@ const Hero = () => {
                         "Ne cherchez pas des lieux, cherchez des âmes. <br />
                         L'inattendu est le plus beau des itinéraires."
                     </p>
-                    <button className="px-8 py-4 bg-mmt-light text-mmt-dark rounded-full font-serif text-xl italic hover:bg-mmt-cream transition-colors shadow-xl flex items-center gap-3 mx-auto transform hover:scale-105 duration-300">
+                    <button onClick={() => document.getElementById('rejoindre')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 bg-mmt-light text-mmt-dark rounded-full font-serif text-xl italic hover:bg-mmt-cream transition-colors shadow-xl flex items-center gap-3 mx-auto transform hover:scale-105 duration-300">
                         <Compass size={24} strokeWidth={1.5} />
                         Commencer le Voyage
                     </button>

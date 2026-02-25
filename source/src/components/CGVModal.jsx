@@ -35,7 +35,7 @@ const CGVModal = ({ isOpen, onClose }) => {
                             <li><strong className="text-mmt-gold">Pionnier (Palier 1) :</strong> 5€/an pour les 500 premiers membres fondateurs.</li>
                             <li><strong className="text-mmt-gold">Palier 2 :</strong> 30€/an (membres 501 à 1000).</li>
                             <li><strong className="text-mmt-gold">Palier 3 :</strong> 60€/an (membres 1001 à 1500).</li>
-                            <li><strong className="text-mmt-gold">Explorateur :</strong> 96€/an (tarif standard).</li>
+                            <li><strong className="text-mmt-gold">Explorateur :</strong> 120€/an (tarif standard).</li>
                         </ul>
                     </section>
                     <section>
