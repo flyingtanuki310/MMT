@@ -35,9 +35,16 @@ const Header = () => {
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-stone-100 py-4 transition-all duration-500 ease-in-out">
             <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                <div className="flex items-center gap-3">
-                    <Logo />
-                    <span className="font-serif text-xl tracking-wide font-bold italic hidden sm:block text-mmt-dark">MeetMeThere</span>
+                <div
+                    className="flex items-center gap-3 cursor-pointer group"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                    <div className="transform group-hover:scale-105 transition-transform duration-300">
+                        <Logo />
+                    </div>
+                    <span className="font-serif text-xl tracking-wide font-bold italic hidden sm:block text-mmt-dark group-hover:text-mmt-gold transition-colors duration-300">
+                        MeetMeThere
+                    </span>
                 </div>
                 <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-stone-600">
                     {links.map(link => (
