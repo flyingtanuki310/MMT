@@ -1,0 +1,54 @@
+name: Deploy to Hostinger via FTP
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: |
+          cd source
+          npm ci
+
+      - name: Fetch Brevo Data
+        env:
+          VITE_BREVO_API_KEY: ${{ secrets.VITE_BREVO_API_KEY }}
+        run: |
+          cd source
+          # Création du fichier .env temporaire pour le build
+          echo "VITE_BREVO_API_KEY=${VITE_BREVO_API_KEY}" > .env
+          node scripts/sync-brevo.mjs || echo "Erreur de sync Brevo, continuation avec données par défaut"
+
+      - name: Build Application
+        run: |
+          cd source
+          npm run build
+
+      - name: Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./source/dist/
+          server-dir: ./public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .env
+          # CECI EST LA LIGNE CRUCIALE : on n'écrase pas le dossier app/
+          dangerous-clean-slate: false
