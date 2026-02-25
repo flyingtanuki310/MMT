@@ -14,7 +14,7 @@ const Logo = () => (
     </svg>
 );
 
-const Footer = ({ onManifestClick, onCGVClick }) => {
+const Footer = ({ onManifestClick, onCGVClick, onContactClick }) => {
     return (
         <footer className="py-16 bg-[#1c1917] text-mmt-light text-center">
             <div className="flex justify-center mb-8">
@@ -35,7 +35,7 @@ const Footer = ({ onManifestClick, onCGVClick }) => {
             <div className="flex justify-center gap-6 md:gap-8 text-stone-600 text-xs tracking-widest uppercase mb-12">
                 <button onClick={onManifestClick} className="hover:text-mmt-gold transition-colors">Manifeste</button>
                 <button onClick={onCGVClick} className="hover:text-mmt-gold transition-colors">CGV</button>
-                <a href="#" className="hover:text-mmt-gold transition-colors">Contact</a>
+                <button onClick={onContactClick} className="hover:text-mmt-gold transition-colors">Contact</button>
             </div>
             <p className="text-stone-600 text-xs">
                 © {new Date().getFullYear()} MeetMeThere • Fait avec ❤️ à Mougins
