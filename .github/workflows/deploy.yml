@@ -37,18 +37,22 @@ jobs:
           cd source
           npm run build
 
+      - name: Prepare files for FTP
+        run: |
+          mkdir -p ftp_deploy
+          cp -r source/dist/* ftp_deploy/
+
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./source/dist/
+          local-dir: ./ftp_deploy/
           server-dir: ./public_html/
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
             .env
-          # CECI EST LA LIGNE CRUCIALE : on n'écrase pas le dossier app/
           dangerous-clean-slate: false
