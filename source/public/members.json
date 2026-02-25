@@ -1,5 +1,14 @@
 [
   {
+    "id": 1,
+    "city": "Mougins",
+    "country": "France",
+    "name": "Romain",
+    "lat": 43.6008898,
+    "lng": 6.9963543,
+    "type": "member"
+  },
+  {
     "id": "founder-romain",
     "city": "Mougins",
     "country": "France",
