@@ -1,0 +1,14 @@
+{
+    "common": {
+        "loading": "Loading..."
+    },
+    "hero": {
+        "subtitle": "The world is too beautiful to be seen alone.",
+        "title1": "Travel is",
+        "title2": "Human.",
+        "quoteLine1": "\"Don't look for places, look for souls.",
+        "quoteLine2": "The unexpected is the most beautiful itinerary.\"",
+        "cta": "Start the Journey",
+        "discover": "Discover"
+    }
+}

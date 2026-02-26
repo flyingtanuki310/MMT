@@ -34,9 +34,12 @@ jobs:
           node scripts/sync-brevo.mjs || echo "Erreur de sync Brevo, continuation avec données par défaut"
 
       - name: Build Application
+        env:
+          BREVO_API_KEY: ${{ secrets.VITE_BREVO_API_KEY }}
         run: |
           cd source
           npm run build
+          sed -i "s/__BREVO_API_KEY__/${BREVO_API_KEY}/" dist/contact.php
 
       - name: Prepare files for FTP
         run: |

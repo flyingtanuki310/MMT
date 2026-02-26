@@ -1,0 +1,14 @@
+{
+    "common": {
+        "loading": "Chargement..."
+    },
+    "hero": {
+        "subtitle": "Le monde est trop beau pour être vu seul.",
+        "title1": "Le Voyage est",
+        "title2": "Humain.",
+        "quoteLine1": "\"Ne cherchez pas des lieux, cherchez des âmes.",
+        "quoteLine2": "L'inattendu est le plus beau des itinéraires.\"",
+        "cta": "Commencer le Voyage",
+        "discover": "Découvrir"
+    }
+}

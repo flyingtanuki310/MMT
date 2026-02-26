@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Logo = () => (
     <svg viewBox="0 0 100 120" className="h-10 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,6 +17,7 @@ const Logo = () => (
 );
 
 const Header = () => {
+    const { t, i18n } = useTranslation();
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -26,11 +28,29 @@ const Header = () => {
     }, []);
 
     const links = [
-        { href: '#philosophie', label: 'Philosophie' },
-        { href: '#experience', label: "L'Expérience" },
-        { href: '#constellation', label: 'La Constellation' },
-        { href: '#equipe', label: "L'Équipage" },
+        { href: '#philosophie', label: t('header.philosophie') },
+        { href: '#experience', label: t('header.experience') },
+        { href: '#constellation', label: t('header.constellation') },
+        { href: '#equipe', label: t('header.equipe') },
     ];
+
+    const LanguageSwitcher = ({ className = "" }) => (
+        <div className={`flex gap-3 items-center text-sm font-sans font-medium tracking-widest ${className}`}>
+            <button
+                onClick={() => { i18n.changeLanguage('fr'); setMobileOpen(false); }}
+                className={`hover:text-mmt-gold transition-colors ${i18n.language?.startsWith('fr') ? 'text-mmt-gold font-bold' : 'text-stone-400'}`}
+            >
+                FR
+            </button>
+            <span className="text-stone-300">|</span>
+            <button
+                onClick={() => { i18n.changeLanguage('en'); setMobileOpen(false); }}
+                className={`hover:text-mmt-gold transition-colors ${i18n.language?.startsWith('en') ? 'text-mmt-gold font-bold' : 'text-stone-400'}`}
+            >
+                EN
+            </button>
+        </div>
+    );
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-stone-100 py-4 transition-all duration-500 ease-in-out">
@@ -53,8 +73,11 @@ const Header = () => {
                         </a>
                     ))}
                     <a href="#rejoindre" className="px-6 py-2 rounded-full border border-mmt-gold text-mmt-gold hover:bg-mmt-gold hover:text-white transition-all duration-300 font-serif italic text-lg">
-                        Rejoindre le cercle
+                        {t('header.rejoindre')}
                     </a>
+                    <div className="pl-4 border-l border-stone-200">
+                        <LanguageSwitcher />
+                    </div>
                 </div>
                 <button className="md:hidden text-stone-600" onClick={() => setMobileOpen(!mobileOpen)}>
                     {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -68,9 +91,12 @@ const Header = () => {
                             {link.label}
                         </a>
                     ))}
-                    <a href="#rejoindre" className="block text-center px-6 py-2 rounded-full border border-mmt-gold text-mmt-gold font-serif italic text-lg" onClick={() => setMobileOpen(false)}>
-                        Rejoindre le cercle
+                    <a href="#rejoindre" className="block text-center px-6 py-2 rounded-full border border-mmt-gold text-mmt-gold font-serif italic text-lg mb-4" onClick={() => setMobileOpen(false)}>
+                        {t('header.rejoindre')}
                     </a>
+                    <div className="flex justify-center pt-4 border-t border-stone-100">
+                        <LanguageSwitcher />
+                    </div>
                 </div>
             )}
         </nav>
