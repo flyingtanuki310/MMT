@@ -35,11 +35,11 @@ jobs:
 
       - name: Build Application
         env:
-          BREVO_API_KEY: ${{ secrets.VITE_BREVO_API_KEY }}
+          VITE_BREVO_API_KEY: ${{ secrets.VITE_BREVO_API_KEY }}
         run: |
           cd source
           npm run build
-          sed -i "s/__BREVO_API_KEY__/${BREVO_API_KEY}/" dist/contact.php
+          sed -i "s/__BREVO_API_KEY__/${VITE_BREVO_API_KEY}/" dist/contact.php
 
       - name: Prepare files for FTP
         run: |
@@ -59,4 +59,6 @@ jobs:
             **/.git*/**
             **/node_modules/**
             .env
+            app/**
+            /app/**
           dangerous-clean-slate: false
