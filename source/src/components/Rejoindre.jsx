@@ -65,7 +65,7 @@ const Rejoindre = () => {
                                 <p className="text-xs uppercase tracking-widest text-stone-500 mb-1 font-sans">{t('rejoindre.public_price')}</p>
                                 <p className="font-serif text-2xl text-mmt-dark">120€ <span className="text-sm font-sans text-stone-500">{t('rejoindre.per_year')}</span></p>
                             </div>
-                            <a href="https://fr.ulule.com/meetmethere" className="w-full py-4 bg-mmt-dark text-mmt-light font-serif text-xl italic hover:bg-[#1c1917] transition-colors shadow-lg flex items-center justify-center gap-2">
+                            <a href="https://fr.ulule.com/meetmethere" target="_blank" rel="noopener noreferrer" className="w-full py-4 bg-mmt-dark text-mmt-light font-serif text-xl italic hover:bg-[#1c1917] transition-colors shadow-lg flex items-center justify-center gap-2">
                                 {t('rejoindre.ulule_cta')} <ArrowRight size={18} />
                             </a>
                             <p className="mt-4 text-[10px] text-stone-400 uppercase tracking-widest">{t('rejoindre.limited')}</p>
