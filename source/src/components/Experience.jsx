@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Experience = () => {
+    const { t } = useTranslation();
     return (
         <section id="experience" className="py-24 bg-[#f5f5f4] overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
@@ -13,7 +15,7 @@ const Experience = () => {
                             src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2832&auto=format&fit=crop"
                         />
                         <p className="font-handwriting text-2xl text-stone-600 absolute bottom-6 left-0 right-0 text-center">
-                            Soirée à Biarritz, 2024
+                            {t('experience.step2_desc', 'Soirée à Biarritz, 2024')}
                         </p>
                     </div>
                     {/* Polaroid 2 */}
@@ -24,7 +26,7 @@ const Experience = () => {
                             src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2940&auto=format&fit=crop"
                         />
                         <p className="font-handwriting text-2xl text-stone-600 absolute bottom-6 left-0 right-0 text-center">
-                            Le fameux dîner de Pierre
+                            {t('experience.step3_desc', 'Le fameux dîner de Pierre')}
                         </p>
                     </div>
                 </div>

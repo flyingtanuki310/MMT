@@ -1,7 +1,9 @@
 import React from 'react';
 import { Compass, BookOpen } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Philosophy = ({ onManifestClick }) => {
+    const { t } = useTranslation();
     return (
         <section id="philosophie" className="py-32 bg-[#0c0a09] relative overflow-hidden text-mmt-light">
             {/* Decorative background elements */}
@@ -28,29 +30,21 @@ const Philosophy = ({ onManifestClick }) => {
 
                     {/* Text */}
                     <div>
-                        <span className="font-handwriting text-mmt-gold text-3xl block mb-4 rotate-1">L'Art de la Rencontre</span>
+                        <span className="font-handwriting text-mmt-gold text-3xl block mb-4 rotate-1">{t('philosophy.tag')}</span>
                         <h2 className="font-serif text-4xl md:text-5xl text-[#e7e5e4] mb-8 leading-tight">
-                            La chaleur humaine comme seul repère dans la nuit.
+                            {t('philosophy.title')}
                         </h2>
                         <div className="space-y-6 text-stone-400 font-light text-lg leading-relaxed">
+                            <p>{t('philosophy.p1')}</p>
                             <p>
-                                Imaginez deux explorateurs qui se croisent au milieu de nulle part.
-                                Ils ne se demandent pas "combien tu as payé pour être là ?",
-                                mais "quelle est ton histoire ?".
+                                <strong className="text-mmt-gold font-serif italic">MeetMeThere</strong> {t('philosophy.p2').replace('<1>MeetMeThere</1>', '')}
                             </p>
-                            <p>
-                                <strong className="text-mmt-gold font-serif italic">MeetMeThere</strong>, c'est ce feu de camp numérique.
-                                Un cercle de lumière où l'on dépose les masques,
-                                où l'on partage un repas, une musique, un silence.
-                            </p>
-                            <p>
-                                Ici, la monnaie n'est pas l'Euro, mais l'Attention que l'on porte à l'autre.
-                            </p>
+                            <p>{t('philosophy.p3')}</p>
                         </div>
                         <div className="mt-10 flex gap-6 items-center">
                             <button onClick={onManifestClick} className="px-6 py-3 border border-white/20 text-white rounded-full font-serif italic hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
                                 <BookOpen size={18} className="text-mmt-gold" />
-                                Lire le Manifeste
+                                {t('philosophy.cta')}
                             </button>
                         </div>
                     </div>

@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Immersion = () => {
+    const { t } = useTranslation();
     return (
         <section id="immersion" className="py-24 bg-[#f5f5f4] relative overflow-hidden">
             {/* Decorative backgrounds */}
@@ -10,8 +12,8 @@ const Immersion = () => {
 
             <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
                 <div className="mb-16">
-                    <span className="font-handwriting text-mmt-gold text-4xl block mb-3 rotate-1">Immersion</span>
-                    <h2 className="font-serif text-4xl md:text-6xl text-mmt-dark leading-tight">Plongez dans l'Expérience</h2>
+                    <span className="font-handwriting text-mmt-gold text-4xl block mb-3 rotate-1">{t('immersion.tag')}</span>
+                    <h2 className="font-serif text-4xl md:text-6xl text-mmt-dark leading-tight">{t('immersion.title')}</h2>
                 </div>
 
                 {/* Polaroid-style video frame */}
@@ -29,7 +31,7 @@ const Immersion = () => {
                             ></iframe>
                         </div>
                         <div className="absolute bottom-0 left-0 right-0 h-16 flex items-center justify-center pointer-events-none">
-                            <span className="font-handwriting text-2xl text-stone-400 opacity-80">Le Film - 2026</span>
+                            <span className="font-handwriting text-2xl text-stone-400 opacity-80">{t('immersion.videoTag')}</span>
                         </div>
                     </div>
                     {/* Tape decoration */}

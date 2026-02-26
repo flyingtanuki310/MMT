@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
 import { MapPin, Star } from 'lucide-react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { useTranslation } from 'react-i18next';
 
 // Custom marker icons
 const createIcon = (type) => {
@@ -40,6 +41,7 @@ const AutoFitBounds = ({ members }) => {
 };
 
 const Constellation = () => {
+    const { t } = useTranslation();
     const [members, setMembers] = useState([]);
     const [count, setCount] = useState(0);
 
@@ -81,10 +83,9 @@ const Constellation = () => {
                         <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_#22c55e]"></div>
                         Live Map
                     </div>
-                    <h2 className="font-serif text-3xl md:text-4xl text-stone-200 mb-4 drop-shadow-md">La Constellation MMT</h2>
+                    <h2 className="font-serif text-3xl md:text-4xl text-stone-200 mb-4 drop-shadow-md">{t('constellation.title', 'La Constellation MMT')}</h2>
                     <p className="text-stone-400 max-w-xl mx-auto font-light text-sm leading-relaxed">
-                        Naviguez dans la communauté en temps réel. Chaque nouvel arrivant allume une lumière, révélant de nouvelles opportunités de voyage.<br />
-                        <span className="text-white font-medium drop-shadow-[0_0_5px_rgba(255,255,255,0.8)]">Argent</span> = Membre • <span className="text-[#fbbf24] font-medium drop-shadow-[0_0_8px_rgba(251,191,36,0.8)]">Or</span> = Fondateur
+                        {t('constellation.desc', 'Naviguez dans la communauté en temps réel.')}
                     </p>
                 </div>
 
