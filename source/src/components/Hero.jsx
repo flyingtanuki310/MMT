@@ -1,6 +1,7 @@
 import React from 'react';
 import { Compass, ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import Countdown from './Countdown';
 
 const Hero = () => {
     const { t } = useTranslation();
@@ -22,10 +23,13 @@ const Hero = () => {
                     <span className="font-handwriting text-3xl md:text-5xl text-white/90 block mb-6 rotate-2 drop-shadow-md">
                         {t('hero.subtitle')}
                     </span>
-                    <h1 className="font-serif text-5xl md:text-7xl leading-tight text-white mb-8 drop-shadow-lg">
+                    <h1 className="font-serif text-5xl md:text-7xl leading-tight text-white mb-6 drop-shadow-lg">
                         {t('hero.title1')} <br />
                         <span className="italic text-mmt-cream">{t('hero.title2')}</span>
                     </h1>
+
+                    <Countdown targetDate="2026-03-28T09:00:00+01:00" />
+
                     <p className="text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto mb-10 drop-shadow-md font-serif italic leading-relaxed">
                         {t('hero.quoteLine1')} <br />
                         {t('hero.quoteLine2')}

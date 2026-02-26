@@ -169,5 +169,12 @@
         "a9_title": "Article 9 – Applicable Law",
         "a9_p": "These TCS are governed by French law. Any dispute relating to their interpretation or execution is under the exclusive jurisdiction of the French courts.",
         "footer": "MeetMeThere • Mougins, France<br />Contact: contact@meetmethere.fr"
+    },
+    "countdown": {
+        "days": "Days",
+        "hours": "Hours",
+        "minutes": "Minutes",
+        "seconds": "Seconds",
+        "launched": "It's time!"
     }
 }

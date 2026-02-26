@@ -35,8 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $payload = [
         "sender" => [
-            "name" => $name,
-            "email" => $email
+            "name" => $name . " (via MMT)",
+            "email" => "hello@meetmethere.club"
         ],
         "to" => [
             [

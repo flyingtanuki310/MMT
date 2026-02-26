@@ -169,5 +169,12 @@
         "a9_title": "Article 9 – Droit Applicable",
         "a9_p": "Les présentes CGV sont soumises au droit français. Tout litige relatif à leur interprétation ou à leur exécution relève de la compétence exclusive des tribunaux français.",
         "footer": "MeetMeThere • Mougins, France<br />Contact : contact@meetmethere.fr"
+    },
+    "countdown": {
+        "days": "Jours",
+        "hours": "Heures",
+        "minutes": "Minutes",
+        "seconds": "Secondes",
+        "launched": "C'est l'heure !"
     }
 }
