@@ -44,7 +44,12 @@ const Countdown = ({ targetDate }) => {
     });
 
     return (
-        <div className="flex justify-center items-center my-10 p-6 md:p-8 bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] mx-auto max-w-2xl">
+        <div className="flex flex-col items-center justify-center my-10 p-6 md:p-8 bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] mx-auto max-w-2xl text-center">
+
+            <h3 className="font-serif text-white/90 text-xl md:text-2xl mb-6 italic drop-shadow-md">
+                {t('countdown.title')}
+            </h3>
+
             {timerComponents.length ? (
                 <div className="flex items-center divide-x divide-white/10 w-full justify-center">
                     {timerComponents}
