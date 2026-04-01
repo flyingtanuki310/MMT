@@ -17,7 +17,7 @@ const Philosophy = ({ onManifestClick }) => {
                         <div className="absolute -inset-2 bg-gradient-to-tr from-mmt-gold to-transparent opacity-20 group-hover:opacity-40 transition-opacity duration-700 blur-lg"></div>
                         <div className="relative aspect-[4/5] overflow-hidden rounded-sm border border-white/10 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-1000">
                             <img
-                                alt="Campfire Discussion"
+                                alt="MeetMeThere - Discussion conviviale autour d'un feu de camp, l'art de la rencontre humaine"
                                 className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000"
                                 src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=80&w=2667&auto=format&fit=crop"
                             />

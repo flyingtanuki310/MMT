@@ -23,7 +23,7 @@ const Immersion = () => {
                             <iframe
                                 className="absolute top-0 left-0 w-full h-full"
                                 src="https://www.youtube.com/embed/YmrfryG07E8?si=_0lVqtungpsfqaU3"
-                                title="YouTube video player"
+                                title="MeetMeThere - Film immersif sur l'hospitalité et le voyage humain (2026)"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerPolicy="strict-origin-when-cross-origin"

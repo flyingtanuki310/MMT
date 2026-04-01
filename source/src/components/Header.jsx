@@ -3,17 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const Logo = () => (
-    <svg viewBox="0 0 100 120" className="h-10 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <linearGradient id="logoGradient" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#bc6c25" />
-                <stop offset="100%" stopColor="#d4a373" />
-            </linearGradient>
-        </defs>
-        <path d="M50 0C22.4 0 0 22.4 0 50C0 87.5 50 120 50 120C50 120 100 87.5 100 50C100 22.4 77.6 0 50 0Z" fill="url(#logoGradient)" />
-        <path d="M25 45 L50 25 L75 45 L68 45 L50 30 L32 45 Z" fill="#fdfcf8" />
-        <path d="M50 85 C50 85 28 68 28 52 C28 42 36 38 42 38 C47 38 50 42 50 42 C50 42 53 38 58 38 C64 38 72 42 72 52 C72 68 50 85 50 85Z" fill="#fdfcf8" />
-    </svg>
+    <img src="/logo.png" alt="MeetMeThere" className="h-10 w-auto" />
 );
 
 const Header = () => {

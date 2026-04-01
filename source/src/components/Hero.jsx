@@ -1,7 +1,9 @@
 import React from 'react';
-import { Compass, ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import Countdown from './Countdown';
+
+const ULULE_URL = 'https://fr.ulule.com/meetmethere';
+const REPLAY_URL = 'https://drive.google.com/file/d/1WpHCFwpYjztnZVXOqbEn0kElvPMO5kst/view';
 
 const Hero = () => {
     const { t } = useTranslation();
@@ -11,7 +13,7 @@ const Hero = () => {
             <div className="absolute inset-0 z-0">
                 <img
                     className="h-full w-full object-cover scale-105 animate-kenburns"
-                    alt="Travel Landscape"
+                    alt="MeetMeThere - Paysage inspirant de voyage authentique et humain"
                     src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2921&auto=format&fit=crop"
                 />
                 <div className="absolute inset-0 bg-black/20"></div>
@@ -28,16 +30,34 @@ const Hero = () => {
                         <span className="italic text-mmt-cream">{t('hero.title2')}</span>
                     </h1>
 
-                    <Countdown targetDate="2026-03-28T09:00:00+01:00" />
+                    {/* Ulule CTA Block */}
+                    <div className="flex flex-col items-center my-8">
+                        <p className="font-serif text-2xl md:text-3xl text-mmt-gold drop-shadow-md mb-6 italic">
+                            MeetMeThere est sur Ulule&nbsp;!
+                        </p>
+                        <a
+                            href={ULULE_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-3 px-10 py-4 bg-mmt-gold text-white font-serif text-xl italic rounded-full shadow-xl hover:brightness-110 transition-all duration-300 transform hover:scale-105"
+                        >
+                            Rejoindre la campagne <ArrowRight size={20} />
+                        </a>
+                        <a
+                            href={REPLAY_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-5 inline-flex items-center gap-1.5 text-white/50 text-xs tracking-wide hover:text-white/80 transition-colors duration-200 underline underline-offset-2"
+                        >
+                            <ExternalLink size={11} />
+                            Replay du webinar du 27 mars
+                        </a>
+                    </div>
 
                     <p className="text-xl md:text-2xl text-white/90 font-light max-w-2xl mx-auto mb-10 drop-shadow-md font-serif italic leading-relaxed">
                         {t('hero.quoteLine1')} <br />
                         {t('hero.quoteLine2')}
                     </p>
-                    <button onClick={() => document.getElementById('rejoindre')?.scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 bg-mmt-light text-mmt-dark rounded-full font-serif text-xl italic hover:bg-mmt-cream transition-colors shadow-xl flex items-center gap-3 mx-auto transform hover:scale-105 duration-300">
-                        <Compass size={24} strokeWidth={1.5} />
-                        {t('hero.cta')}
-                    </button>
                 </div>
             </div>
 

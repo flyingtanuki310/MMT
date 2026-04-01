@@ -5,7 +5,7 @@ import Philosophy from './components/Philosophy';
 import Immersion from './components/Immersion';
 import Pact from './components/Pact';
 import Experience from './components/Experience';
-import Constellation from './components/Constellation';
+// import Constellation from './components/Constellation';
 import Team from './components/Team';
 import Rejoindre from './components/Rejoindre';
 import Footer from './components/Footer';
@@ -26,7 +26,7 @@ function App() {
       <Immersion />
       <Pact />
       <Experience />
-      <Constellation />
+      {/* <Constellation /> */}
       <Team />
       <Rejoindre />
       <Footer onManifestClick={() => setManifestOpen(true)} onCGVClick={() => setCgvOpen(true)} onContactClick={() => setContactOpen(true)} />
